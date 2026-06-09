@@ -1,0 +1,14 @@
+[
+    {
+        "course_id": "PY101",
+        "course_name": "Python Fundamentals",
+        "trainer_name": "Mr Joseph",
+        "capacity": 5
+    },
+    {
+        "course_id": "PY220",
+        "course_name": "Advanced Python",
+        "trainer_name": "Mr Titus",
+        "capacity": 10
+    }
+]

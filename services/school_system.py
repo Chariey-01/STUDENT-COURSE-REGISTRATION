@@ -1,6 +1,9 @@
+from services.data_manager import DataManager
+
 class SchoolSystem:
     # initialize the school system with empty lists for students and courses, and an empty dictionary for registrations thus allowing us to manage students, courses, and their registrations in the school system
     def __init__(self):
+      # class attributes to store students, courses, and registrations in memory thus allowing us to manage the data within the system
         self.students = []
         self.courses = []
         self.registrations = {}
@@ -93,3 +96,5 @@ class SchoolSystem:
         # register the student for the course by adding the course_id to the student's registration list in the registrations dictionary
         self.registrations[student_id].append(course_id)
         print(f"{student.name} whose ID is {student_id} registered for {course.course_name} successfully.")
+
+   

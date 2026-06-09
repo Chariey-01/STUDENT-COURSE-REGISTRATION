@@ -1,4 +1,40 @@
+
 # # This is a test file to test the functionality of the school system
+from services.school_system import SchoolSystem
+from services.data_manager import DataManager
+from models.student import Student
+from models.course import Course
+
+system = SchoolSystem()
+data = DataManager()
+
+# adding students to the system
+student1 = Student("SFDTH17", "Stephanie", 20, "stephie09@gmail.com", "+254756456788")
+system.add_student(student1)
+# adding courses to the system
+course1 = Course("PY101", "Python Fundamentals", "Mr Joseph", 5)
+course2 = Course("PY220", "Advanced Python", "Mr Titus", 10)
+system.add_course(course1)
+system.add_course(course2)
+# registering student to a course
+system.register_student_to_course("SFDTH17", "PY101") 
+# test save
+data.save_students(system.students)
+data.save_courses(system.courses)
+data.save_registrations(system.registrations)
+# test load
+print("\n--- LOADING DATA ---\n")
+
+new_system = SchoolSystem()
+
+loaded_students = data.load_students()
+loaded_courses = data.load_courses()
+loaded_reg = data.load_registrations()
+
+print("Raw loaded students:", loaded_students)
+print("Raw loaded courses:", loaded_courses)
+print("Raw registrations:", loaded_reg)
+
 
 # # to test student management in the school system.
 # from models.course import Course
